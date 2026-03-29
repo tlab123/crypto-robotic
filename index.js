@@ -398,7 +398,7 @@ async function loop(){
 
         try{
             console.log("finalPayload", finalPayload);
-            await callApi(id, finalPayload);
+            //await callApi(id, finalPayload);
         }catch(e){
             console.log("error", e);
         }
