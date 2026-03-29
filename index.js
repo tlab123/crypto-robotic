@@ -395,6 +395,10 @@ async function loop(){
         );
 
         try{
+            const url = `https://hub.axisrobotics.ai/action?id=${id}`;
+            openOrReuseTab(url);
+
+            await new Promise(r=>setTimeout(r,55000));
             console.log("finalPayload", finalPayload);
             //await callApi(id, finalPayload);
         }catch(e){
