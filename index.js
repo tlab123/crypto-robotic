@@ -414,7 +414,7 @@ async function loop(){
     }
 
     console.log("all payloads finished");
-    document.body.style.background = "green";
+    //document.body.style.background = "green";
 }
 
 loop();
