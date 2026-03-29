@@ -276,23 +276,30 @@ function randomize(n){
 
     let str = n.toString();
 
-    if(str.includes("e")) return Number(n).toFixed(16);
+    // tránh scientific notation
+    if(str.includes("e")){
+        str = Number(n).toFixed(16);
+    }
 
     let [int, dec] = str.split(".");
-
     dec = dec || "";
 
+    // giữ 2 số đầu
     let keep = dec.slice(0,2);
 
-    let randLen = 16 - 2; // còn lại 14 digit
+    // random phần còn lại theo độ dài gốc
+    let randLen = dec.length - keep.length;
     let rand = "";
 
     for(let i=0;i<randLen;i++){
         rand += Math.floor(Math.random()*10);
     }
 
-    return parseFloat(Number(`${int}.${keep}${rand}`).toFixed(16));
+    const result = `${int}.${keep}${rand}`;
+
+    return Number(result);
 }
+
 function generateState(isEnd = false) {
 
     const object_positions = {world: [0, 0, 0]};
