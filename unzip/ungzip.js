@@ -25,7 +25,7 @@ function gzip(text){
 async function decodeFile(){
 
     // đọc file gzip
-    const data = await fs.readFile("unzip/172.txt");
+    const data = await fs.readFile("unzip/input.txt");
 
     // gunzip
     const text = await gunzip(data);
@@ -34,9 +34,9 @@ async function decodeFile(){
     const json = JSON.parse(text);
 
     // ghi json ra file
-    await fs.writeFile("unzip/172.json", JSON.stringify(json,null,2));
+    await fs.writeFile("unzip/output.json", JSON.stringify(json,null,2));
 
-    console.log("✅ decoded → 172.json");
+    console.log("✅ decoded → output.json");
 }
 
 async function main(){
