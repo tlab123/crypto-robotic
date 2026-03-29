@@ -1,0 +1,17 @@
+{
+  "is_completed": true,
+  "simulation_time_seconds": 77.7,
+  "checker_report": {
+    "overall": true,
+    "goals": [
+      {
+        "key": "x",
+        "current": 0.1457
+      },
+      {
+        "key": "z",
+        "current": 0.1233
+      }
+    ]
+  }
+}
