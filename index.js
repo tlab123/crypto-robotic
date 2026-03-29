@@ -403,6 +403,11 @@ async function loop(){
             console.log("error", e);
         }
 
+        if(list.length === 0){
+            console.log("last task -> stop loop");
+            break;
+        }
+
         const delay = (finalPayload.simulation_time_seconds + 5 + Math.random()*5) * 1000;
 
         console.log("next run in", delay/1000, "seconds");
