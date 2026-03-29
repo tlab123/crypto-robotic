@@ -225,9 +225,7 @@ async function getPendingTaskIds(){
         .map(t => t.id);
 }
 
-async function createQposFromStart(start) {
-    const taskid = 172;
-
+async function createQposFromStart(taskid) {
     const res = await fetch(`https://laptrinhthatde.com/${taskid}.json`);
     const data = await res.json();
 
@@ -385,7 +383,7 @@ async function loop(){
 
         const start = generateState(false);
         const end = generateState(true);
-        const qpos = await createQposFromStart(start);
+        const qpos = await createQposFromStart(id);
         finalPayload.trajectory_packed.object_state.start = start;
         finalPayload.trajectory_packed.object_state.end   = end;
         finalPayload.trajectory_packed.initial_snapshot.qpos = qpos;
